@@ -2,11 +2,13 @@
   "name": "dota-guides",
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.4.0",
   "scripts": {
     "dev": "bun run build && wrangler dev",
     "build": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "lint": "oxlint src",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
     "dev:vite": "vite dev",
     "tunnel": "cloudflared tunnel run --url http://localhost:8787 development",
     "preview": "vite preview"
@@ -15,10 +17,13 @@
     "@sveltejs/adapter-cloudflare": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/vite-plugin-svelte": "latest",
+    "oxfmt": "^0.67.0",
+    "oxlint": "^1.82.0",
     "svelte": "latest",
     "svelte-check": "latest",
     "typescript": "~6.0.0",
     "vite": "latest",
     "wrangler": "latest"
-  }
+  },
+  "packageManager": "bun@1.4.0"
 }

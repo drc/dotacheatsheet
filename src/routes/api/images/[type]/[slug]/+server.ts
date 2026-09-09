@@ -3,7 +3,11 @@ import type { RequestHandler } from './$types'
 
 const origin = 'https://www.dotabuff.com/assets'
 
-const slugify = (value: string) => value.toLowerCase().replace(/["']/g, '').replace(/[^a-z0-9]+/g, '-')
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/["']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
 
 const items = new Set(
   heroes.flatMap((hero) => [

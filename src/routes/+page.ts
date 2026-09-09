@@ -4,7 +4,7 @@ import type { PageLoad } from './$types'
 export const load: PageLoad = async ({ fetch, url }) => {
   const selected = url.searchParams.get('hero')
   const response = await fetch('/api/guides')
-  const heroes = await response.json() as Guide[]
+  const heroes = (await response.json()) as Guide[]
 
   return {
     heroes,
